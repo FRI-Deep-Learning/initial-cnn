@@ -23,13 +23,7 @@ img_channels = 1
 
 
 
-# Load files and unpickle
-x_train_file = open(x_train_file_name, "rb")
-y_train_file = open(y_train_file_name, "rb")
-
-x_test_file = open(x_test_file_name, "rb")
-y_test_file = open(y_test_file_name, "rb")
-
+# Load images
 x_train = np.load(x_train_file_name)
 y_train = np.load(y_train_file_name)
 
