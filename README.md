@@ -16,13 +16,13 @@ Unpack it in a dedicated folder so that you have the following structure:
 
 Next, download the two preprocessing scripts:
 - https://raw.githubusercontent.com/FRI-Deep-Learning/Transform-Images/master/LFW_img_transform.py
-- https://github.com/FRI-Deep-Learning/Auto-Occlude/blob/master/auto_occlude.py
+- https://raw.githubusercontent.com/FRI-Deep-Learning/Auto-Occlude/master/auto_occlude.py
 
 Then run `python LFW_img_transform.py` and then `python auto_occlude.py` to preprocess the IMFDB.
 
 Next, download the pickle_images and train_model scripts:
-- 
-- 
+- https://raw.githubusercontent.com/FRI-Deep-Learning/initial-cnn/master/pickle_images.py
+- https://raw.githubusercontent.com/FRI-Deep-Learning/initial-cnn/master/train_model.py
 
 Run `python pickle_images.py` to generate training and testing splits. This only has to be done once... until we improve the pickle script.
 
