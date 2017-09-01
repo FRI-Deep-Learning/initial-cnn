@@ -22,18 +22,12 @@ img_cols = 64
 img_channels = 1
 
 
-
 # Load images
 x_train = np.load(x_train_file_name)
 y_train = np.load(y_train_file_name)
 
 x_test = np.load(x_test_file_name)
 y_test = np.load(y_test_file_name)
-
-x_train_file.close()
-y_train_file.close()
-x_test_file.close()
-y_test_file.close()
 
 print(x_train.shape)
 print(y_train.shape)
