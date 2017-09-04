@@ -43,7 +43,7 @@ y_test  = np_utils.to_categorical(y_test, num_classes)
 
 model = Sequential()
 
-model.add(Convolution2D(32, 7, 7, input_shape=x_train.shape[1:]))
+model.add(Convolution2D(32, (7, 7), input_shape=x_train.shape[1:]))
 model.add(Activation("relu"))
 
 # Had to add this because we had too many dimensions when we hit the below Dense network.
@@ -51,8 +51,15 @@ model.add(Activation("relu"))
 # decrease the dimensionality without losing features.
 model.add(MaxPooling2D(pool_size=(2,2))) 
 
-model.add(Convolution2D(64, 5, 5))
+model.add(Convolution2D(64, (5, 5)))
 model.add(Activation("relu"))
+
+# # Add this in hopes of reducing the dimensionality enough
+# model.add(Convolution2D(64, (3, 3)))
+# model.add(Activation("relu"))
+
+# model.add(Convolution2D(64, (3, 3)))
+# model.add(Activation("relu"))
 
 model.add(MaxPooling2D(pool_size=(2,2)))
 
@@ -85,7 +92,7 @@ print(y_train.shape)
 
 model.fit(x_train, y_train,
               batch_size=batch_size,
-              nb_epoch=num_epoch,
+              epochs=num_epoch,
               validation_data=(x_test, y_test),
               shuffle=True)
 
